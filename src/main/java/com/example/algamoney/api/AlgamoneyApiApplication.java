@@ -1,11 +1,10 @@
 package com.example.algamoney.api;
 
+import com.example.algamoney.api.config.property.AlgamoneyApiProperty;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
-
-import com.example.algamoney.api.config.property.AlgamoneyApiProperty;
 
 @SpringBootApplication
 @EnableConfigurationProperties(AlgamoneyApiProperty.class)
