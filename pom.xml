@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.algaworks.algamoney-api</groupId>
@@ -8,14 +8,11 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>algamoney-api</name>
-    <description>Demo project for Spring Boot</description>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.4.RELEASE</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <version>2.3.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
@@ -26,10 +23,6 @@
         <spring-security-oauth2.version>2.2.1.RELEASE</spring-security-oauth2.version>
         <spring-security-jwt.version>1.0.9.RELEASE</spring-security-jwt.version>
 
-        <jasperreports.version>6.5.1</jasperreports.version>
-        <jasperreports-functions.version>6.5.1</jasperreports-functions.version>
-        <jasperreports-fonts.version>6.0.0</jasperreports-fonts.version>
-
         <aws-java-sdk.version>1.11.274</aws-java-sdk.version>
     </properties>
 
@@ -38,6 +31,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.0.Final</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -53,6 +53,7 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -87,6 +88,14 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-java8</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>6.1.0.Final</version>
+        </dependency>
+
+
 
         <!-- Suporte do Jackson para as datas do Java 8 -->
         <dependency>
@@ -123,24 +132,25 @@
             <optional>false</optional>
         </dependency>
 
-        <!-- JasperReports -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>${jasperreports.version}</version>
+            <version>6.14.0</version>
         </dependency>
 
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-functions</artifactId>
-            <version>${jasperreports-functions.version}</version>
+            <version>6.14.0</version>
         </dependency>
+
 
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-fonts</artifactId>
-            <version>${jasperreports-fonts.version}</version>
+            <version>6.14.0</version>
         </dependency>
+
 
         <!-- Amazon S3 -->
         <dependency>
@@ -149,6 +159,19 @@
             <version>${aws-java-sdk.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -156,16 +179,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.0.4.RELEASE</version>
             </plugin>
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>jr-ce-releases</id>
-            <url>http://jaspersoft.artifactoryonline.com/jaspersoft/jr-ce-releases</url>
-        </repository>
-    </repositories>
 </project>
 
